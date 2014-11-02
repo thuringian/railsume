@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Degree.create!([
   {school: "University of Massachusetts Dartmouth", title: "Bachelor of Science", major: "Management Information Systems", honors: "Cum Laude", year: "2006", image: "umassd.jpg"}
 ])
