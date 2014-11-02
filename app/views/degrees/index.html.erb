@@ -1,0 +1,31 @@
+<h2>Education</h2>
+<ul class="list-group">
+    <%= will_paginate @degrees, renderer: BootstrapPagination::Rails %>
+    <% @degrees.each do |degree| %>
+      <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-12 col-md-2">
+          <p>
+            <%= image_tag(degree.image, width: "96") %>
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <h4 class="list-group-item-heading"><%= degree.title %></h4>
+            <p>
+              <%= degree.major %><br>
+              <%= degree.school %><br>
+              <%= degree.year %> - <%= degree.honors %>
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <p>
+            <%= link_to 'View', degree_path(degree), :class => "btn btn-default btn-sm", :role => "button" %>
+            <%= link_to 'Edit', edit_degree_path(degree), :class => "btn btn-default btn-sm", :role => "button" %>
+            <%= link_to 'Remove', degree_path(degree), :class => "btn btn-danger btn-sm", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <p>
+        </div>
+      </div>
+      </li>
+    <% end %>
+    <%= will_paginate @degrees, renderer: BootstrapPagination::Rails %>
+</ul>

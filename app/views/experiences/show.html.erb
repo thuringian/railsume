@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<%= @experience.position %>, <%= @experience.company %>		
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12 col-md-2">
+				<p>
+    			
+    			</p>
+    		</div>
+    		<div class="col-xs-12 col-md-8">
+                <p><%= @experience.city %>, <%= @experience.state %> — <%= @experience.start_date %> - <%= @experience.end_date %></p>
+                <p><%= @experience.summary %></p>
+            </div>
+    		<div class="col-xs-12 col-md-2">
+    			<p>
+    			<%= link_to 'Edit', edit_experience_path(@experience), :class => "btn btn-default btn-sm", :role => "button" %>
+    			<%= link_to 'Remove', experience_path(@experience), :class => "btn btn-danger btn-sm", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+    			</p>
+    		</div>
+		</div>
+	</div>
+</div>
+<%= link_to 'Back', experiences_path, :class => "btn btn-default btn-sm", :role => "button" %>

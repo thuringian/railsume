@@ -1,0 +1,29 @@
+<h2>Technical Skills</h2>
+<ul class="list-group">
+  <%= will_paginate @skills, renderer: BootstrapPagination::Rails %>
+  <% @skills.each do |skill| %>
+    <li class="list-group-item">
+    <div class="row">
+      <div class="col-xs-12 col-md-2">
+        <p>
+          <%= image_tag(skill.image, width: "96") %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-7">
+        <h4 class="list-group-item-heading"><%= skill.title %></h4>
+        <p>
+          <%= skill.description %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <p>
+          <%= link_to 'View', skill_path(skill), :class => "btn btn-default btn-sm", :role => "button" %>
+          <%= link_to 'Edit', edit_skill_path(skill), :class => "btn btn-default btn-sm", :role => "button" %>
+          <%= link_to 'Remove', skill_path(skill), :class => "btn btn-danger btn-sm", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+  <%= will_paginate @skills, renderer: BootstrapPagination::Rails %>
+</ul>

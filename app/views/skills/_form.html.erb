@@ -1,0 +1,33 @@
+<%= form_for @skill, html: {role: "form"} do |f| %>
+  <div class="form-group">
+    <% if @skill.errors.any? %>
+    <div class="alert alert-danger" role="alert" id="error_explanation">
+      <%= pluralize(@skill.errors.count, "error") %> prohibited
+        this skill from being saved:
+      <ul>
+      <% @skill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :title, :class => "form-control", :placeholder => "Enter a title" %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :description, :class => "col-sm-2 control-label" %>
+    <%= f.text_area :description, :class => "form-control", :placeholder => "Enter a description" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :image, :class => "form-control", :placeholder => "Enter a image filename" %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  </div>
+<% end %>

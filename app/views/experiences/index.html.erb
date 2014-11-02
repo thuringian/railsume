@@ -1,0 +1,28 @@
+<h2>Work Experience</h2>
+<ul class="list-group">
+  <%= will_paginate @experiences, renderer: BootstrapPagination::Rails %>
+  <% @experiences.each do |experience| %>
+    <li class="list-group-item">
+    <div class="row">
+      <div class="col-xs-12 col-md-2">
+        <p>
+
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-7">
+        <h4 class="list-group-item-heading"><%= experience.position %>, <%= experience.company %></h4>
+        <p><%= experience.city %>, <%= experience.state %> — <%= experience.start_date %> - <%= experience.end_date %></p>
+        <p><%= experience.summary %></p>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <p>
+          <%= link_to 'View', experience_path(experience), :class => "btn btn-default btn-sm", :role => "button" %>
+          <%= link_to 'Edit', edit_experience_path(experience), :class => "btn btn-default btn-sm", :role => "button" %>
+          <%= link_to 'Remove', experience_path(experience), :class => "btn btn-danger btn-sm", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+  <%= will_paginate @experiences, renderer: BootstrapPagination::Rails %>
+</ul>

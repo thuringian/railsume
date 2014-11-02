@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: MyString
+  title: MyString
+  major: MyString
+  honors: MyString
+  year: MyString
+  image: MyString
+
+two:
+  school: MyString
+  title: MyString
+  major: MyString
+  honors: MyString
+  year: MyString
+  image: MyString

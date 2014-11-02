@@ -1,0 +1,48 @@
+<%= form_for @degree, html: {role: "form"} do |f| %>
+  <div class="form-group">
+    <% if @degree.errors.any? %>
+    <div class="alert alert-danger" role="alert" id="error_explanation">
+      <%= pluralize(@degree.errors.count, "error") %> prohibited
+        this degree from being saved:
+      <ul>
+      <% @degree.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :school, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :school, :class => "form-control", :placeholder => "Enter a school" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :title, :class => "form-control", :placeholder => "Enter a title" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :major, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :major, :class => "form-control", :placeholder => "Enter a major" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :honors, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :honors, :class => "form-control", :placeholder => "Enter any honors" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :year, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :year, :class => "form-control", :placeholder => "Enter a graduation year" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image, :class => "col-sm-2 control-label" %>
+    <%= f.text_field :image, :class => "form-control", :placeholder => "Enter a image filename" %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  </div>
+<% end %>
