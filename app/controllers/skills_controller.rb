@@ -25,10 +25,8 @@ class SkillsController < ApplicationController
 	end
 
 	def index
-      # set per_page globally
-      WillPaginate.per_page = 10
-
-  		@skills = Skill.all.order(:title).paginate(:page => params[:page])
+  		#@skills = Skill.all.order(:title).paginate(:page => params[:page])
+      @skills = Skill.page(params[:page]).order('title')
 
       respond_to do |format|
         format.html # index.html.erb

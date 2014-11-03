@@ -25,10 +25,7 @@ class DegreesController < ApplicationController
 	end
 
 	def index
-      # set per_page globally
-      WillPaginate.per_page = 10
-
-  		@degrees = Degree.all.order(:year).paginate(:page => params[:page])
+ 		 @degrees = Degree.all.order(:year).paginate(:page => params[:page])
 
       respond_to do |format|
         format.html # index.html.erb

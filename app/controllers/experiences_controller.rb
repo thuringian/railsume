@@ -25,9 +25,6 @@ class ExperiencesController < ApplicationController
 	end
 
 	def index
-      # set per_page globally
-      WillPaginate.per_page = 10
-
   		@experiences = Experience.all.order(:start_date).paginate(:page => params[:page])
 
       respond_to do |format|

@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   http_basic_authenticate_with name: ENV['USER'], password: ENV['PASSWORD'], except: [:index, :show]
   
   protect_from_forgery with: :exception
+
+  # set per_page globally
+  WillPaginate.per_page = 10
 end
