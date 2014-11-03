@@ -25,7 +25,6 @@ class SkillsController < ApplicationController
 	end
 
 	def index
-  		#@skills = Skill.all.order(:title).paginate(:page => params[:page])
       @skills = Skill.page(params[:page]).order('title')
 
       respond_to do |format|

@@ -25,7 +25,7 @@ class DegreesController < ApplicationController
 	end
 
 	def index
- 		 @degrees = Degree.all.order(:year).paginate(:page => params[:page])
+      @degrees = Degree.page(params[:page]).order('year')
 
       respond_to do |format|
         format.html # index.html.erb
