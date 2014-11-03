@@ -25,7 +25,7 @@ class ExperiencesController < ApplicationController
 	end
 
 	def index
-      @experiences = Experience.page(params[:page]).order('start_date')
+      @experiences = Experience.page(params[:page]).order('start_date DESC')
 
       respond_to do |format|
         format.html # index.html.erb
