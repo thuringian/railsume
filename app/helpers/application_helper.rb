@@ -1,5 +1,12 @@
 module ApplicationHelper
-  def is_active(action)       
-    params[:action] == action ? "active" : nil        
+
+  def nav_link(text, path)
+  	options = current_page?(path) ? { class: "active" } : {}
+
+  	content_tag(:li, options) do
+    	link_to text, path
+  	end
+  	
   end
+
 end

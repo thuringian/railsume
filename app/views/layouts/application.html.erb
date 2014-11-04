@@ -36,7 +36,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<%=is_active('home')%>"><%= link_to 'Home', controller: 'welcome' %></li>
+            <%= nav_link 'Home', root_path %>
+            <li class="<%=is_active('welcome')%>"><%= link_to 'Home', controller: 'welcome' %></li>
             <li class="<%=is_active('degrees')%>"><%= link_to 'Education', controller: 'degrees' %></li>
             <li class="<%=is_active('skills')%>"><%= link_to 'Skills', controller: 'skills' %></li>
             <li class="<%=is_active('experiences')%>"><%= link_to 'Work Experience', controller: 'experiences' %></li>
