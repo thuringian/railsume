@@ -37,10 +37,10 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <%= nav_link 'Home', root_path %>
-            <li class="<%=is_active('welcome')%>"><%= link_to 'Home', controller: 'welcome' %></li>
-            <li class="<%=is_active('degrees')%>"><%= link_to 'Education', controller: 'degrees' %></li>
-            <li class="<%=is_active('skills')%>"><%= link_to 'Skills', controller: 'skills' %></li>
-            <li class="<%=is_active('experiences')%>"><%= link_to 'Work Experience', controller: 'experiences' %></li>
+            <li><%= link_to 'Home', controller: 'welcome' %></li>
+            <li><%= link_to 'Education', controller: 'degrees' %></li>
+            <li><%= link_to 'Skills', controller: 'skills' %></li>
+            <li><%= link_to 'Work Experience', controller: 'experiences' %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
