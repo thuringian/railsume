@@ -2,8 +2,8 @@
   <% @contacts.each do |contact| %>
     <div class="row">     
       <div class="col-xs-12 col-md-12">
-        <a class="btn btn-social-icon btn-google-plus">
-        	<i class="fa fa-google-plus"><%= contact.link %></i>
+        <a class="btn btn-social-icon btn-google-plus" href="<%= contact.link %>" title="<%= contact.title %>">
+        	<i class="fa fa-google-plus">></i>
         </a>
       </div>
     </div>
