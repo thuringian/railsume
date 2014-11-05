@@ -1,0 +1,12 @@
+<h2>Contact</h2>
+<ul class="list-group">
+  <% @contacts.each do |contact| %>
+    <li class="list-group-item">
+    <div class="row">     
+      <div class="col-xs-12 col-md-12">
+        <h4 class="list-group-item-heading"><%= contact.title %></h4>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
