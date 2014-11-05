@@ -2,7 +2,9 @@
   <% @contacts.each do |contact| %>
     <div class="row">     
       <div class="col-xs-12 col-md-12">		   	
-      		<%= link_to contact.title, contact.link, :class => "btn btn-social-icon btn-lg btn-" + contact.title, :role => "button" %>
+      		<%= link_to contact.link, :class => "btn btn-social-icon btn-lg btn-" + contact.title, :role => "button" do %>
+      			<i class="fa fa-<%= contact.title %>"><%= contact.title %></i>
+      		<% end %>
       </div>
     </div>
   </li>
